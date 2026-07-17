@@ -19,4 +19,8 @@ WHERE category = 'Side';
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- 1. first we look at "from". we open MenuItems table to see all food.
+-- 2. next we use "where" to filter. we want only item that category is 'Side'. 
+--if it is main dish or drink, we don't want it.
+-- 3. last step is "select". we just want to show food name and price on the board. 
+--other info like item_id we don't need to show.
