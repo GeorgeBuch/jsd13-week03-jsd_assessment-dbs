@@ -30,5 +30,5 @@ db.menu_items.find({ price: { $lt: 20 } })
 // Your thinking:
 // 1. line 1 use chrome burger db for use it database fot setup this file to use it
 //2. use updateMany mean updaye many data that we want in this case is many price in menu_items
-//3. set price to int mean integer number because database assign price to "String"
+//3. set price to int mean integer number because database assign price to String
 //4. line 18 find all collection menu_item that price (less than = ($it)) 20
