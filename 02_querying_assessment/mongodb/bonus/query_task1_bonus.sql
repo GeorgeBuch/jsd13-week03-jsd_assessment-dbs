@@ -7,7 +7,7 @@
 --
 -- Hint: Write a query to find the name and price of all rows in the MenuItems table
 -- where the price is less than 10.
-
+select * FROM suppliers
 -- ---------------------------------------------------------------
 -- Your thinking process (required)
 -- ---------------------------------------------------------------

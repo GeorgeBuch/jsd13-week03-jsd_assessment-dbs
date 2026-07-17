@@ -1,10 +1,21 @@
+use("chrome-burger-db");
 // Task 1: Budget Meal Deal
 // The owner wants to introduce a budget-friendly meal deal promotion and needs to identify
 // which menu items could be included. To qualify, an item must be priced under $10.00,
 // so they can offer good value without cutting too deep into margins.
 //
 // Hint: Write a query to find all menu items in the menu_items collection that have a price less than 10.00.
-
+db.menu_items.updateMany(
+  {},
+  [
+    {
+      $set: {
+        price: { $toInt: "$price" }
+      }
+    }
+  ]
+)
+db.menu_items.find({ price: { $lt: 20 } })
 // Bonus: The dataset is identical in the PostgreSQL database, meaning the same business insight can be retrieved.
 // Write the equivalent query for PostgreSQL. See query_task1_bonus.sql
 
