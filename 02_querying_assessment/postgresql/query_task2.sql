@@ -19,4 +19,8 @@ where role = 'Cook';
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- 1.first we look at "from". we go to staff table to see all staff.
+-- 2.next we use "where". we want only staff that role is 'Cook'. 
+--if role is Cashier or other, we don't want them.
+-- 3.last step is "select". we want to show just first name and last name. 
+--we don't need to show staff_id or role in the output.

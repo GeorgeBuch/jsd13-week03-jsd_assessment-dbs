@@ -12,32 +12,25 @@
 use("chrome-burger-db");
 
 db.staff.aggregate([
-  // ขั้นที่ 1: การ JOIN ตาราง (เทียบเท่า LEFT JOIN Orders ON ...)
+ 
   {
     $lookup: {
-      from: "orders",           // ชื่อตาราง(collection) ที่จะไปดึงมาเชื่อม
-      localField: "staff_id",   // รหัสพนักงานในแฟ้ม staff
-      foreignField: "staff_id", // รหัสพนักงานในแฟ้ม orders
-      as: "staff_orders"        // มัดรวมใบเสร็จทั้งหมดที่หาเจอใส่โฟลเดอร์ชื่อ staff_orders
+      from: "orders",          
+      localField: "staff_id",   
+      foreignField: "staff_id", 
+      as: "staff_orders"        
     }
   },
-  
-  // ขั้นที่ 2: การเลือกข้อมูลและคำนวณ (เทียบเท่า SELECT, CONCAT, COUNT)
   {
     $project: {
-      _id: 0, // ไม่เอา _id รกๆ มาแสดง
-      // ใช้กาววิเศษต่อชื่อ (CONCAT)
+      _id: 0, 
       full_name: { $concat: ["$first_name", " ", "$last_name"] },
-      
-      // เครื่องกดนับจำนวน (COUNT) โดยการนับขนาด ($size) ของโฟลเดอร์ staff_orders
       total_orders: { $size: "$staff_orders" } 
     }
   },
-  
-  // ขั้นที่ 3: การเรียงลำดับ (เทียบเท่า ORDER BY total_orders DESC)
   {
     $sort: {
-      total_orders: -1 // ใส่ -1 หมายถึง เรียงจากมากไปน้อย (DESC) / ถ้าใส่ 1 คือน้อยไปมาก (ASC)
+      total_orders: -1 
     }
   }
 ]);
@@ -50,4 +43,9 @@ db.staff.aggregate([
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+//want to use aggregate similar a function in js
+//1. $lookup like a left join orders on
+//2. id = 0 mean don't want
+//3.caoncat similar sql for connect first name and last name don't for get ' ' for space
+//4.count total order by count size
+//5.sort all by $sort similar order by in sql

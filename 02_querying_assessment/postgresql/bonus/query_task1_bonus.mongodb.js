@@ -12,13 +12,13 @@ use("chrome-burger-db");
 
 db.menu_items.find(
   {
-    "category": 'Side'   // ลบช่องว่างหลังตัว y ออก
+    "category": 'Side'   
   },
   {
     "name": 1,
     "price": 1,
-    "_id": 0             // เพิ่มบรรทัดนี้ เพื่อบอกว่าไม่เอา _id
-  }
+    "_id": 0   
+  }        
 );
 // ---------------------------------------------------------------
 // Your thinking process (required)
@@ -29,4 +29,7 @@ db.menu_items.find(
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+//we use find for find all menu_items mongo but in postgres use MenuItems
+//we want category have string 'Side'
+//we don't want to show id we use 0
+//we want just name, price that why we use 1

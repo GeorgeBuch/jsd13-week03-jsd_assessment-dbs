@@ -30,4 +30,10 @@ ORDER BY
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+--first we use CONCAT for connect in this case we want to connect firstname and last name
+-- we use ' ' for space between f and l and use s. before first,last_name cause
+--s. like a nick name we want to shortcut to call Staff that we assign after Staff s in FROM
+--so we change fist and last to full name and similar in orders  we use COUNT for show every order id as total_orders
+--so we want staff is main that why we use left join and we want to match line staff table match to orders table
+--after that we have to group by use group by for group staff id and name of staff for count the number of orders for each staff
+--last after select join and group we have to order by staff from staff who most order to less order

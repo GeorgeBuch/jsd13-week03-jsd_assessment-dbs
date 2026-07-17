@@ -10,9 +10,8 @@ use("chrome-burger-db");
 // Write the equivalent query for PostgreSQL. See query_task3_bonus.sql
 db.ingredients.find(
     {
-        stock_level: { $gte: NumberDecimal("100.00")
-
-    }}
+        stock_level: { $gte: NumberDecimal("100.00")}
+    }
 )
 // ---------------------------------------------------------------
 // Your thinking process (required)
@@ -27,3 +26,6 @@ db.ingredients.find(
 //2.use db.ingredients.find for find all table in ingredients 
 //3.in {} use stock_level for call to watch all stock_level field
 //4. use $gte for greater than or equal this case want stock_level greater than or equal
+//5.use NumberDecimal after $gte because this stock_level collect data in NumberDecimal
+//but also id don't use it's can run and show the same but use NumberDecimal for correct type
+//of data is way better

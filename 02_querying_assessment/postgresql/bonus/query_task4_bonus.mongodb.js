@@ -17,8 +17,8 @@ db.ingredients.aggregate([
   {
     $lookup: {
       from: "suppliers",
-      localField: "supplier_id", // ดึงจากบรรทัด supplier_id ในตาราง ingredients ของคุณ
-      foreignField: "_id",       // ไปเทียบกับบรรทัด _id ในตาราง suppliers
+      localField: "supplier_id", 
+      foreignField: "_id",       
       as: "s"
     }
   },
@@ -46,13 +46,18 @@ db.ingredients.aggregate([
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//1. we use lookup it same like join in sql
-//we take ingredient and find supplier have same id
-//and put them together in "s"
-//2.we use $match it work like where
-//we want only farm name'Freshest Farm Produce'
-// we have to use "s.name" for call name inside s
-// other farm we don't want
-/// 3. use $project it like SELECT from sql
-// we want to show just ingredient name so we put 1 for name
-// and we use 0 for _id because we don't want to show it in output
+// 1.first step use $lookup, it's same like JOIN in SQL.
+// we take ingredient supplier_id and match with _id in suppliers collection.
+// and put them together inside "s"
+
+// 2.use $unwind to unpack the "s" 
+// because $lookup gives result as an array, we need to unpack it first 
+// before we can search inside it.
+
+// 3.next step use $match, it works like WHERE in SQL
+// we want only the farm name 'Freshest Farm Produce'
+// we use "s.name" to call the name inside s. other farms we don't want
+
+// 4.last step use $project, it's like SELECT in SQL.
+// we want to show just ingredient name, so we put 1 for name
+// and we put 0 for _id because we don't want to show it in the output

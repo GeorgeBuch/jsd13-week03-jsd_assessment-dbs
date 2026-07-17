@@ -31,4 +31,12 @@ use("chrome-burger-db");
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-// 1. line 1 import    
+// 1. line 1 import  database name chrome-burger-db
+//2.use db.find order for find all table in orders
+//3.in first {} want to find staff 
+// but joe in fistname of staff we have to use "" coverall
+//  and.(dot) between staff and first name for call fistname in staff
+// and the same for lastname
+// 4. another {} we want to show just order date and total price 
+//we have to use 1 with field that we want and use 0 for
+//we don't want in this case wa don't want to show id 

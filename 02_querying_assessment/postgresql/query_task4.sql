@@ -24,4 +24,7 @@ WHERE
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- we assign nick name of Ingredients as i so we select name from Ingredients
+--and join for connect other table name is Suppliers and assign nickname as a s
+--we want connect the row that we have supplier_id of Ingredients(i) and supplier_id of Suppliers(s) the same
+--last we want specific row name of Suppliers as a 'Freshest Farm Produce'

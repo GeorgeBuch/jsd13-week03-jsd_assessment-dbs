@@ -28,4 +28,10 @@ db.orders.aggregate([
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+//1. we use aggregate for use collection orders come to process we we call pipeline
+//pipe line similar function in Javascript but have more process to do with data
+//2.we use $group for like group by example we want tp group by firstname but this case
+//3.Just want only "Revenue" to show we have to give null to _id meaning not group by anything
+//it's change to one group
+//4.last we use $sum for calculate all price(total_price) for show revenue
+//5.but before we have to create new field name total_revenue before calculate to show name of column after print

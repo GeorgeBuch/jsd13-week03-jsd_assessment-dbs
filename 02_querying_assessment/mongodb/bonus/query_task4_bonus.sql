@@ -19,3 +19,7 @@ FROM Orders;
 --
 -- Your thinking:
 --
+--we use sum before total_price mean want to calculate sum all we select field total_price
+-- AS mean this query we want to change name total_price to total_revenue after calculate and we got result
+-- from Orders it's different mongogb in mongo we use orders not Orders
+--so that we want Orders collect tion why we use from

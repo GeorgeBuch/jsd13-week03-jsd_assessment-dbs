@@ -27,4 +27,7 @@ db.staff.find(
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+//we use find for find all staff mongo but in postgres use Staff
+//we want role as a Cook
+//we don't want to show id we use 0
+//we want just first name, last that why we use 1

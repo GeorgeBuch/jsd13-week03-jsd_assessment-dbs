@@ -19,4 +19,8 @@ FROM Orders
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+--we don't want all in table 
+--this round we don't use * after SELECT because we want specific column
+--specific we want is order_date and total_price
+--and we use , for separate data column
+--and we use from for point to order table

@@ -10,6 +10,9 @@
 
 
 -- Select rows where price is less than 20
+
+
+-- Select rows where price is less than 20
 SELECT *
 FROM MenuItems
 WHERE price < 20;
@@ -22,4 +25,9 @@ WHERE price < 20;
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+--1.use database same as mongodb in this cause we don't have to
+--updateMany from string to int cause sql read price value
+--2.we use select * mean select all table in this database (chrome-burgur-db)
+--3. FROM MenuItems is name of database in sql but in mongo we call menu_items
+--4.use where for field and it's a price wa want price less than 20 
+--5.we have to use price < 20
