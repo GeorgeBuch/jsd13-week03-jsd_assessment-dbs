@@ -1,3 +1,4 @@
+use("chrome-burger-db");
 // Task 1 Bonus: Sides Menu Board
 // The owner wants to update the printed menu board that displays only the side dishes.
 // They need a list of every item in the 'Side' category along with its current price,
@@ -7,7 +8,18 @@
 //
 // Hint: Write a query on the menu_items collection to find the name and price
 // of all documents where the category is 'Side'.
+use("chrome-burger-db");
 
+db.menu_items.find(
+  {
+    "category": 'Side'   // ลบช่องว่างหลังตัว y ออก
+  },
+  {
+    "name": 1,
+    "price": 1,
+    "_id": 0             // เพิ่มบรรทัดนี้ เพื่อบอกว่าไม่เอา _id
+  }
+);
 // ---------------------------------------------------------------
 // Your thinking process (required)
 // ---------------------------------------------------------------

@@ -7,7 +7,8 @@
 --
 -- Hint: Write a query that uses an aggregate function on the Orders table
 -- to sum the total_price across all orders, returning the result as total_revenue.
-
+SELECT SUM(total_price) AS total_revenue
+FROM Orders;
 -- ---------------------------------------------------------------
 -- Your thinking process (required)
 -- ---------------------------------------------------------------

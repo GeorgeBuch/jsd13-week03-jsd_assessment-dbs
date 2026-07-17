@@ -1,3 +1,4 @@
+use("chrome-burger-db");
 // Task 4: Total Revenue Summary
 // At the end of the trading period, the owner wants a single figure that shows how much revenue
 // the truck has generated across all recorded orders. This number will be used in their
@@ -8,7 +9,16 @@
 
 // Bonus: The dataset is identical in the PostgreSQL database, meaning the same business insight can be retrieved.
 // Write the equivalent query for PostgreSQL. See query_task4_bonus.sql
-
+db.orders.aggregate([
+  {
+    $group: {
+      _id: null,
+      total_revenue: {
+        $sum: "$total_price"
+      }
+    }
+  }
+])
 // ---------------------------------------------------------------
 // Your thinking process (required)
 // ---------------------------------------------------------------

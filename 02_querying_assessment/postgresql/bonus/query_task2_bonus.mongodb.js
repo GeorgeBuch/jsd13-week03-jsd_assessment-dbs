@@ -7,7 +7,17 @@
 //
 // Hint: Write a query on the staff collection to find the first_name and last_name
 // of all documents where the role is 'Cook'.
-
+use("chrome-burger-db");
+db.staff.find(
+  {
+    "role": "Cook"      
+  },
+  {
+    "first_name": 1,
+    "last_name": 1,
+    "_id": 0             
+  }
+);
 // ---------------------------------------------------------------
 // Your thinking process (required)
 // ---------------------------------------------------------------

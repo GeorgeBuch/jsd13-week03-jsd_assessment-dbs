@@ -7,7 +7,9 @@
 
 -- Bonus: The dataset is identical in the MongoDB database, meaning the same business insight can be retrieved.
 -- Write the equivalent query for MongoDB. See query_task1_bonus.mongodb.js
-
+SELECT name, price
+FROM MenuItems
+WHERE category = 'Side';
 -- ---------------------------------------------------------------
 -- Your thinking process (required)
 -- ---------------------------------------------------------------

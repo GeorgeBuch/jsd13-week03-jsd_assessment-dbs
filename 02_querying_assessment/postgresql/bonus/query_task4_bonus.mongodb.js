@@ -10,6 +10,33 @@
 // collection, then filter where the supplier name is 'Freshest Farm Produce' and return
 // only the ingredient names.
 
+
+use("chrome-burger-db");
+
+db.ingredients.aggregate([
+  {
+    $lookup: {
+      from: "suppliers",
+      localField: "supplier_id", // ดึงจากบรรทัด supplier_id ในตาราง ingredients ของคุณ
+      foreignField: "_id",       // ไปเทียบกับบรรทัด _id ในตาราง suppliers
+      as: "s"
+    }
+  },
+  {
+    $unwind: "$s" 
+  },
+  {
+    $match: {
+      "s.name": "Freshest Farm Produce"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      name: 1
+    }
+  }
+]);
 // ---------------------------------------------------------------
 // Your thinking process (required)
 // ---------------------------------------------------------------
@@ -19,4 +46,13 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+//1. we use lookup it same like join in sql
+//we take ingredient and find supplier have same id
+//and put them together in "s"
+//2.we use $match it work like where
+//we want only farm name'Freshest Farm Produce'
+// we have to use "s.name" for call name inside s
+// other farm we don't want
+/// 3. use $project it like SELECT from sql
+// we want to show just ingredient name so we put 1 for name
+// and we use 0 for _id because we don't want to show it in output

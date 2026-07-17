@@ -6,9 +6,20 @@
 -- Hint: Write a query to find the total number of orders processed by each staff member.
 -- The result should show the staff member's full name (concatenated) and their total order count,
 -- ordered by the count in descending order.
-
+SELECT 
+    CONCAT(s.first_name, ' ', s.last_name) AS full_name,
+    COUNT(o.order_id) AS total_orders
+FROM 
+    Staff s
+LEFT JOIN 
+    Orders o ON s.staff_id = o.staff_id
+GROUP BY 
+    s.staff_id, s.first_name, s.last_name
+ORDER BY 
+    total_orders DESC;
 -- Bonus: The dataset is identical in the MongoDB database, meaning the same business insight can be retrieved.
 -- Write the equivalent query for MongoDB. See query_task3_bonus.mongodb.js
+
 
 -- ---------------------------------------------------------------
 -- Your thinking process (required)

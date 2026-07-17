@@ -1,3 +1,4 @@
+use("chrome-burger-db");
 // Task 3: Stock Replenishment Check
 // Before placing the weekly supply order, the manager wants to avoid over-ordering ingredients
 // that are already well-stocked. They need a list of every ingredient with a stock level
@@ -7,7 +8,12 @@
 
 // Bonus: The dataset is identical in the PostgreSQL database, meaning the same business insight can be retrieved.
 // Write the equivalent query for PostgreSQL. See query_task3_bonus.sql
+db.ingredients.find(
+    {
+        stock_level: { $gte: NumberDecimal("100.00")
 
+    }}
+)
 // ---------------------------------------------------------------
 // Your thinking process (required)
 // ---------------------------------------------------------------
@@ -17,4 +23,7 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+// 1. line 1 import  database name chrome-burger-db
+//2.use db.ingredients.find for find all table in ingredients 
+//3.in {} use stock_level for call to watch all stock_level field
+//4. use $gte for greater than or equal this case want stock_level greater than or equal

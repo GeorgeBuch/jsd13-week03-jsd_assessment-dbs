@@ -7,7 +7,11 @@
 --
 -- Hint: Write a query to find the name of all rows in the Ingredients table
 -- where the stock_level is greater than or equal to 100.
+SELECT *
 
+FROM Ingredients
+
+WHERE stock_level >= 100.00;
 -- ---------------------------------------------------------------
 -- Your thinking process (required)
 -- ---------------------------------------------------------------
@@ -17,4 +21,7 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+--we use * for select all column in table 
+--FROM for from table name is Ingredients
+--WHERE stock_level is we want 
+--all column that include stock level greater than or equal to 100(stock>= 100.00;)

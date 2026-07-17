@@ -7,7 +7,14 @@
 
 -- Bonus: The dataset is identical in the MongoDB database, meaning the same business insight can be retrieved.
 -- Write the equivalent query for MongoDB. See query_task4_bonus.mongodb.js
-
+SELECT 
+    i.name
+FROM 
+    Ingredients i
+JOIN 
+    Suppliers s ON i.supplier_id = s.supplier_id
+WHERE 
+    s.name = 'Freshest Farm Produce';
 -- ---------------------------------------------------------------
 -- Your thinking process (required)
 -- ---------------------------------------------------------------

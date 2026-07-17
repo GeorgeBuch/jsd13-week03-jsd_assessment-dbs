@@ -8,7 +8,8 @@
 -- Hint: Write a query to find the order_date and total_price from the Orders table
 -- for all orders handled by Jane Doe. You will need to join with the Staff table
 -- to filter by the staff member's name.
-
+SELECT order_date, total_price
+FROM Orders
 -- ---------------------------------------------------------------
 -- Your thinking process (required)
 -- ---------------------------------------------------------------
