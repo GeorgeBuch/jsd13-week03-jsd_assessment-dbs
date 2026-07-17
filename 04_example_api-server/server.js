@@ -38,6 +38,7 @@ const pool = new Pool({
   ssl: {
     rejectUnauthorized: false,
   },
+  family: 4,
 });
 pool.query("SELECT 1")
   .then(() => console.log("Connected to Supabase"))
